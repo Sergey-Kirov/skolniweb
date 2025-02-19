@@ -1,72 +1,142 @@
-/* CSS file: style.css */
-
-/* Reset default margin */
-body, h1, h2 {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Styling for the header container */
-.header {
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
     display: flex;
-    justify-content: space-between; /* Space between the logo and centered content */
-    align-items: center; /* Vertically center items */
-    padding: 20px; /* Add space around the header */
-    position: relative; /* Allow absolute positioning for centering */
-}
-
-/* Logo on the far left, resized to 15px by 15px */
-.header .logo img {
-    height: 15px; /* Set height of logo to 15px */
-    width: 15px;  /* Set width of logo to 15px */
-    object-fit: contain; /* Ensure the logo doesn't stretch */
-}
-
-/* Center the title and search bar */
-.header .centered-content {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    text-align: center; /* Center text inside */
-}
-
-/* Style the title */
-.header .centered-content h1 {
-    margin: 0;
-    font-size: 36px; /* Adjust size of the title */
-    font-family: 'Arial', sans-serif; /* Optional: Set a font */
-}
-
-/* Style the search bar and input field */
-.header .search-bar {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 10px; /* Space between title and search bar */
-    justify-content: center; /* Center the search bar */
+    padding: 30px 0;
+    position: relative;
 }
 
-.header .search-bar input {
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.header .search-bar button {
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #4CAF50; /* Green button */
-    color: white;
-    cursor: pointer;
-}
-
-.header .search-bar button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
-/* Optional: Add styling for the main content */
-main {
-    padding: 20px;
+/* Title Container Styling */
+.title-container {
+    width: 100%;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Title Styling - Stretch across screen */
+.title {
+    font-size: 3rem; /* Adjust font size */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 5px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Search Bar Container */
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px; /* Space between search bar and menus */
+    position: relative;
+}
+
+/* Dropdown Menu Section */
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    font-size: 16px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Submenu (hidden by default) */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+/* Show submenu on hover with swing effect */
+.menu-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling for Menu Items on Hover */
+.menu-item:hover > a {
+    color: #007bff;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    padding: 10px;
+    width: 300px; /* Adjust the width of the search bar */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Image Styling Below Search Bar */
+.image-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ukazka-image {
+    width: 100%;
+    max-width: 1000px; /* Adjust image size */
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-items {
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 200px;
+    }
+
+    .ukazka-image {
+        max-width: 100%;
+    }
 }
