@@ -1,0 +1,72 @@
+/* CSS file: style.css */
+
+/* Reset default margin */
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the header container */
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between the logo and centered content */
+    align-items: center; /* Vertically center items */
+    padding: 20px; /* Add space around the header */
+    position: relative; /* Allow absolute positioning for centering */
+}
+
+/* Logo on the far left, resized to 15px by 15px */
+.header .logo img {
+    height: 15px; /* Set height of logo to 15px */
+    width: 15px;  /* Set width of logo to 15px */
+    object-fit: contain; /* Ensure the logo doesn't stretch */
+}
+
+/* Center the title and search bar */
+.header .centered-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center; /* Center text inside */
+}
+
+/* Style the title */
+.header .centered-content h1 {
+    margin: 0;
+    font-size: 36px; /* Adjust size of the title */
+    font-family: 'Arial', sans-serif; /* Optional: Set a font */
+}
+
+/* Style the search bar and input field */
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Space between title and search bar */
+    justify-content: center; /* Center the search bar */
+}
+
+.header .search-bar input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.header .search-bar button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    cursor: pointer;
+}
+
+.header .search-bar button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Optional: Add styling for the main content */
+main {
+    padding: 20px;
+    text-align: center;
+}
