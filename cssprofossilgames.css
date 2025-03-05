@@ -1,178 +1,132 @@
-/* Reset basic styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header Styling */
+.dark-mode {
+    background-color: #181818;
+    color: white;
+}
+
 header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: 15px 40px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-/* Title Container Styling */
-.title-container {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+.dark-mode header {
+    background-color: #222;
 }
 
-/* Title Styling - Stretch across screen */
-.title {
-    font-size: 3rem; /* Adjust font size */
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #333;
-    letter-spacing: 5px;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-}
 
-/* Menu Container - Positioning the Menu to the top-right */
-.search-bar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 30px; /* Space between search bar and menus */
-    position: relative;
-}
-
-/* Adjust menu positioning */
-.menu {
+.dark-mode-container {
     position: absolute;
-    top: 10px; /* Align to the top-right */
-    right: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.menu-items {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
 
-.menu-item {
-    position: relative;
-    font-size: 16px;
-}
-
-.menu-item a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-/* Submenu (hidden by default) */
-.submenu {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: none;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.submenu li {
-    padding: 5px 0;
-}
-
-/* Show submenu on hover with swing effect */
-.menu-item:hover .submenu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Styling for Menu Items on Hover */
-.menu-item:hover > a {
-    color: #007bff;
-}
-
-/* Search Bar Styling */
-.search-bar {
-    padding: 10px;
-    width: 300px; /* Adjust the width of the search bar */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Image Styling Below Search Bar */
 .image-container {
-    width: 100%;
     text-align: center;
     margin-top: 20px;
 }
 
 .ukazka-image {
-    width: 100%;
-    max-width: 1000px; /* Adjust image size */
-    height: auto;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* "What We Offer" Section Styling */
-.what-we-offer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    padding: 0 20px;
-    width: 100%;
-}
 
-.offer-box {
-    width: 22%;
-    height: 150px;
-    background-color: #f0f0f0;
+.hover-sections {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
 }
 
-.offer-box h2 {
-    font-size: 18px;
+.hover-box {
+    background-color: #ddd;
+    padding: 20px;
     text-align: center;
-    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 250px;
+    cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .menu-items {
-        gap: 10px;
-    }
+.dark-mode .hover-box {
+    background-color: #444;
+    color: white;
+}
 
-    .search-bar {
-        width: 200px;
-    }
+.hover-box:hover {
+    transform: scale(1.1);
+    background-color: #bbb;
+}
 
-    .ukazka-image {
-        max-width: 100%;
-    }
+.dark-mode .hover-box:hover {
+    background-color: #666;
+}
 
-    .what-we-offer {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .offer-box {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+.cta-section {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.dark-mode .cta-section {
+    background-color: #333;
+}
+
+
+.cta-button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-mode .cta-button {
+    background-color: #ff9800;
+}
+
+.cta-button:hover {
+    background-color: #005f7f;
+    transform: scale(1.1);
+}
+
+.dark-mode .cta-button:hover {
+    background-color: #e68900;
+}
+
+
+.contact-box {
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 1000px;
+    max-width: 4000px;
+    margin: 20px auto;
+}
+
+.dark-mode .contact-box {
+    background-color: #333;
 }
