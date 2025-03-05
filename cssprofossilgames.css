@@ -1,4 +1,4 @@
-/* Basic Reset */
+/* Reset basic styles */
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +40,7 @@ header {
     text-align: center;
 }
 
-/* Search Bar Container */
+/* Menu Container - Positioning the Menu to the top-right */
 .search-bar-container {
     display: flex;
     justify-content: center;
@@ -50,11 +50,11 @@ header {
     position: relative;
 }
 
-/* Dropdown Menu Section */
+/* Adjust menu positioning */
 .menu {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px; /* Align to the top-right */
+    right: 10px;
 }
 
 .menu-items {
@@ -126,6 +126,32 @@ header {
     height: auto;
 }
 
+/* "What We Offer" Section Styling */
+.what-we-offer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.offer-box {
+    width: 22%;
+    height: 150px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offer-box h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-items {
@@ -138,5 +164,15 @@ header {
 
     .ukazka-image {
         max-width: 100%;
+    }
+
+    .what-we-offer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-box {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }
