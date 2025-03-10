@@ -4,58 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fossil Games</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssprofossilgames.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Fossil Games Logo" class="logo">
+        <div class="title-container">
+            <h1 class="title">Fossil Games</h1>
         </div>
-        
-        <nav class="main-menu">
-            <ul>
-                <li><a href="#products">Produkty</a></li>
-                <li><a href="#about">O nás</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
 
+       
         <div class="dark-mode-container">
             <button id="dark-mode-toggle">
-                <span id="mode-icon">☾</span> Přepnout režim
+                <span id="mode-icon">☾</span> Přepnout na temný režim?
             </button>
         </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Kontakty</a></li>
+                <li><a href="#">O nás</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Vítejte ve světě Fossil Games</h1>
-                <p>Jsme herní studio zaměřené na tvorbu poutavých her s důrazem na hráče</p>
-                <button class="cta-button">Prozkoumat naše hry</button>
-            </div>
-            <div class="hero-image">
-                <img src="hero-image.png" alt="Herní ilustrace">
-            </div>
-        </section>
+   
+    <div class="image-container">
+        <img src="ukazka.jpeg" alt="Fossil Games Image" class="ukazka-image">
+    </div>
 
-        <section class="features">
-            <div class="feature">
-                <h3>Originální herní zážitky</h3>
-                <p>Přinášíme vám jedinečné herní světy a příběhy</p>
-            </div>
-            <div class="feature">
-                <h3>Férové herní mechaniky</h3>
-                <p>Žádné mikroplatby, férový herní design</p>
-            </div>
-            <div class="feature">
-                <h3>Komunita hráčů</h3>
-                <p>Spojujeme hráče a vytváříme přátelské prostředí</p>
-            </div>
-        </section>
+    <section class="hover-sections">
+        <div class="hover-box"><h2>Zábavné hry</h2></div>
+        <div class="hover-box"><h2>Produkty, které stojí za vaši pozornost</h2></div>
+        <div class="hover-box"><h2>Férové ceny</h2></div>
+        <div class="hover-box"><h2>Žádný Pay2Win, Pay2Play nebo mikrotransakce</h2></div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Zaujali jsme vás?</h2>
+        <button class="cta-button" onclick="scrollToContact()">Kontaktujte nás</button>
+    </section>
 
         <section id="products" class="products">
             <h2>Naše hry</h2>
@@ -66,45 +54,28 @@
                     <p>Strategická hra zasazená do válečného konfliktu</p>
                     <button>Zjistit více</button>
                 </div>
+                <!-- Add more product cards as needed -->
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2>Náš příběh</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Fossil Games je mladé herní studio založené nadšenci, kteří milují videohry. Naším cílem je vytvářet hry, které baví nás i naše hráče.</p>
-                </div>
-                <div class="team-image">
-                    <img src="team.png" alt="Tým Fossil Games">
-                </div>
-            </div>
-        </section>
+    <section class="map-container">
+        <h2>Kde nás najdete</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2>Kontaktujte nás</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>Email: contact@fossilgames.com</p>
-                    <p>Telefon: +420 123 456 789</p>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Vaše jméno" required>
-                    <input type="email" placeholder="Váš email" required>
-                    <textarea placeholder="Vaše zpráva" required></textarea>
-                    <button type="submit">Odeslat</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 Fossil Games. Všechna práva vyhrazena.</p>
+    <section id="contact">
+        <div class="contact-box">
+            <h2>Kontakt</h2>
+            <p>Email: contact@fossilgames.com</p>
+            <p>Telefon: +420 123 456 789</p>
         </div>
-    </footer>
+    </section>
 
     <script>
+        function scrollToContact() {
+            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        }
+
         const toggleButton = document.getElementById("dark-mode-toggle");
         const modeIcon = document.getElementById("mode-icon");
 
@@ -114,10 +85,10 @@
 
             if (document.body.classList.contains("dark-mode")) {
                 modeIcon.textContent = "☀";
-                toggleButton.innerHTML = '<span id="mode-icon">☀</span> Přepnout světlý режим';
+                toggleButton.innerHTML = '<span id="mode-icon">☀</span> Přepnout na světlý režim?';
             } else {
                 modeIcon.textContent = "☾";
-                toggleButton.innerHTML = '<span id="mode-icon">☾</span> Přepnout tmavý режим';
+                toggleButton.innerHTML = '<span id="mode-icon">☾</span> Přepnout na temný režim?';
             }
         });
 
